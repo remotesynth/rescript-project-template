@@ -12,6 +12,7 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "launchdarkly-node-server-sdk": "^6.1.0",
     "rescript": "*"
   }
 }
