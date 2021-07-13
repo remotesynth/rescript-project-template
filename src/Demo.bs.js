@@ -5,9 +5,13 @@ var LaunchdarklyNodeServerSdk = require("launchdarkly-node-server-sdk");
 
 var ldclient = LaunchdarklyNodeServerSdk.init("sdk-64fb3f87-7e48-4a8d-99de-595a7472472f");
 
+var me = {
+  key: "aa0ceb"
+};
+
 ldclient.on("ready", (function (param) {
         console.log("It's now safe to request feature flags");
-        var showFeature = ldclient.variation("my-first-feature-flag", false);
+        var showFeature = ldclient.variation("my-first-feature-flag", me);
         if (showFeature) {
           console.log("Show feature");
         } else {
@@ -17,4 +21,5 @@ ldclient.on("ready", (function (param) {
       }));
 
 exports.ldclient = ldclient;
+exports.me = me;
 /* ldclient Not a pure module */
